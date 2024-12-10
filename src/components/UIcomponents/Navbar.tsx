@@ -26,6 +26,7 @@ const Navbar = ({
             window.removeEventListener('scroll', handleScroll);
         };
     }, [])
+    console.log(scrollPosition)
     return (
         <div className={cn('relative flex justify-center m-auto bg-zinc-950', className)}>
             <motion.div
