@@ -5,7 +5,6 @@ import PreviewCode from './Preview&Code'
 import { metadata } from '@/lib/interfaces'
 
 const CodeStructure = () => {
-
     const [metaData, setmetaData] = useState<metadata | null>(null)
     const path = usePathname()
     const componentName = path.split('/docs/components/')

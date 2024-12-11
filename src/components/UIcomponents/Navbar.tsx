@@ -58,7 +58,7 @@ const Logo = ({
     children?: React.ReactNode;
 }>) => {
     return (
-        <div className='mr-4 px-7 cursor-pointer active:brightness-80 rounded-full text-base focus:outline-none transition ease-in-out duration-30 py-2 px-4 text-white bg-transparent opacity-80 hover:opacity-100'>
+        <div className='mr-4 px-7 cursor-pointer active:brightness-80 rounded-full text-base focus:outline-none transition ease-in-out duration-30 py-2  text-white bg-transparent opacity-80 hover:opacity-100'>
             {children}
         </div>
     )

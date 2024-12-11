@@ -5,7 +5,7 @@ import React from 'react'
 
 const Sidebar = () => {
     const path = usePathname()
-
+    console.log(path)
     return (
         <div className=' text-white  flex-col  justify-start overflow-y-auto w-[220px] border-b border-r border-stone-800 p-4 hidden md:flex'>
             <div className='py-4 font-semibold text-sm cursor-pointer'> Follow for updates </div>
@@ -21,7 +21,7 @@ const Sidebar = () => {
                 </div>
             </Link>
             <Link href={'/docs/installation'}>
-                <div className={`text-base brightness-50 hover:brightness-95 cursor-pointer ${path == "/docs/installation" && "brightness-125"} `}>
+                <div className={`text-base  hover:brightness-95 cursor-pointer ${path == "/docs/installation" ? "brightness-125" : "brightness-50"} `}>
                     Installation
                 </div>
             </Link>
