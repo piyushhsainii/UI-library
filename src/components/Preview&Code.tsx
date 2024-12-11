@@ -63,6 +63,13 @@ const PreviewCode = ({ metadata }: { metadata: metadata }) => {
                     </div>
                 }
             </div>
+            <div>
+                {/* {
+                    metadata.variants.map((mtdata) => (
+                        <div> {mtdata.variantName} </div>
+                    ))
+                } */}
+            </div>
         </div >
     )
 }

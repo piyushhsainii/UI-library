@@ -5,7 +5,17 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: black;
+  
 }
+
+::-webkit-scrollbar {
+  @apply bg-black w-[5px] ;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply  w-[5px] bg-slate-800 rounded-full opacity-0 transition-opacity duration-300;
+}
+
 
 .hide-scrollbar {
 	-ms-overflow-style: none;
@@ -13,6 +23,8 @@ body {
 	scrollbar-width: none;
 	/* Firefox */
 }
+
+
 .loader-background-2 {
 	background-image: linear-gradient(250deg, black, rgba(1, 0, 31, 0.7), black);
 	background-blend-mode: overlay;

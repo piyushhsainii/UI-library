@@ -24,31 +24,17 @@ export const data = [
                 code: [
                     {
                         title: "Install tailwindcss and its peer dependencies, then generate your tailwind.config.js and postcss.config.js files:",
-                        code: `
-                    npm install -D tailwindcss postcss autoprefixer
- 
-                    npx tailwindcss init -p
+                        code: `npm install -D tailwindcss postcss autoprefixer \nnpx tailwindcss init -p
                     `
                     },
                     {
                         title: "Add this import header in your main css file, src/index.css in our case:",
-                        code: `
-                    @tailwind base;
-                    @tailwind components;
-                    @tailwind utilities;
+                        code: `@tailwind base;\n@tailwind components;\n@tailwind utilities;
                     `
                     },
                     {
                         title: "Configure the tailwind template paths in tailwind.config.js:",
-                        code: `
-                        /** @type {import('tailwindcss').Config} */
-                        module.exports = {
-                        content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
-                        theme: {
-                            extend: {},
-                        },
-                        plugins: [],
-                        }
+                        code: `/** @type {import('tailwindcss').Config} */\nmodule.exports = {\ncontent: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],\ntheme: {\nextend: {},\n},\nplugins: [],\n}
                     `,
                     },
                 ]
@@ -58,24 +44,7 @@ export const data = [
                 description: "The current version of Vite splits TypeScript configuration into three files, two of which need to be edited. Add the baseUrl and paths properties to the compilerOptions section of the tsconfig.json and tsconfig.app.json files:",
                 code: [{
                     title: "",
-                    code: `
-                    {
-                        "files": [],
-                        "references": [
-                            {
-                            "path": "./tsconfig.app.json"
-                            },
-                            {
-                            "path": "./tsconfig.node.json"
-                            }
-                        ],
-                        "compilerOptions": {
-                            "baseUrl": ".",
-                            "paths": {
-                            "@/*": ["./src/*"]
-                            }
-                        }
-                        }
+                    code: `\n{\n"files": [],\n"references": [\n{\n"path": "./tsconfig.app.json"\n},\n{\n"path": "./tsconfig.node.json"\n }\n],\n "compilerOptions": {\n "baseUrl": ".",\n "paths": {\n"@/*": ["./src/*"]\n }\n }\n}
                     `
                 }]
             },
@@ -84,19 +53,7 @@ export const data = [
                 description: "Add the following code to the tsconfig.app.json file to resolve paths, for your IDE:",
                 code: [{
                     title: "",
-                    code: `
-                       {
-                        "compilerOptions": {
-                            // ...
-                            "baseUrl": ".",
-                            "paths": {
-                            "@/*": [
-                                "./src/*"
-                            ]
-                            }
-                            // ...
-                        }
-                        }
+                    code: `{\n"compilerOptions": {\n// ...\n "baseUrl": ".",\n"paths": {\n"@/*": [\n"./src/*"\n]\n}\n// ...\n}\n}
                     `
                 }]
             },
@@ -110,19 +67,7 @@ export const data = [
                     },
                     {
                         title: "",
-                        code: `
-                        import path from "path"
-                        import react from "@vitejs/plugin-react"
-                        import { defineConfig } from "vite"
-
-                        export default defineConfig({
-                        plugins: [react()],
-                        resolve: {
-                            alias: {
-                            "@": path.resolve(__dirname, "./src"),
-                            },
-                        },
-                        })
+                        code: `\nimport path from "path"\nimport react from "@vitejs/plugin-react"\nimport { defineConfig } from "vite"\nexport default defineConfig({\nplugins: [react()],\nresolve: {\nalias: {\n"@": path.resolve(__dirname, "./src"),\n},\n},\n})
                         `
                     },
                 ]
@@ -141,10 +86,7 @@ export const data = [
                 code: [
                     {
                         title: "",
-                        code: `
-                        Which style would you like to use? › New York
-                        Which color would you like to use as base color? › Zinc
-                        Do you want to use CSS variables for colors? › no / yes
+                        code: `\nWhich style would you like to use? › New York\nWhich color would you like to use as base color? › Zinc\nDo you want to use CSS variables for colors? › no / yes
                         `
                     }
                 ]
@@ -159,15 +101,7 @@ export const data = [
                     },
                     {
                         title: "The command above will add the Button component to your project. You can then import it like this:",
-                        code: `
-                        import { Button } from "@/components/ui/button"
-                        export default function Home() {
-                        return (
-                            <div>
-                            <Button>Click me</Button>
-                            </div>
-                        )
-                        }
+                        code: `\nimport { Button } from "@/components/ui/button"\nexport default function Home() {\nreturn (\n<div>\n<Button>Click me</Button>\n</div>\n)\n}
                         `
                     },
                 ]
@@ -197,10 +131,7 @@ export const data = [
                 description: "You will be asked a few questions to configure components.json:",
                 code: [{
                     title: "",
-                    code: `
-                    Which style would you like to use? › New York
-                    Which color would you like to use as base color? › Zinc
-                    Do you want to use CSS variables for colors? › no / yes
+                    code: `\nWhich style would you like to use? › New York\nWhich color would you like to use as base color? › Zinc\nDo you want to use CSS variables for colors? › no / yes
                     `
                 },]
 
@@ -213,15 +144,7 @@ export const data = [
                     code: `npx shadcn@latest add button`
                 }, {
                     title: "The command above will add the Button component to your project. You can then import it like this",
-                    code: `
-                    import { Button } from "@/components/ui/button"
-                    export default function Home() {
-                    return (
-                        <div>
-                        <Button>Click me</Button>
-                        </div>
-                    )
-                    }
+                    code: `\nimport { Button } from "@/components/ui/button"\nexport default function Home() {\nreturn (\n<div>\n<Button>Click me</Button>\n</div>\n)\n}
                     `
                 }]
 

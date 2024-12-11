@@ -8,7 +8,7 @@ const page = () => {
     return (
         <div className='flex  justify-start w-full max-w-screen-2xl pt-16'>
             <Sidebar />
-            <div className=" bg-black text-white border-b px-7 border-r border-stone-800  w-[82vw] md:w-full ">
+            <div className=" bg-black text-white border-b px-7 max-w-[800px]  border-stone-800  w-[82vw] md:w-full ">
                 <div className='flex gap-2 text-sm p-5'>
                     <div className='text-stone-400'>Docs </div>{`> Installation `}
                 </div>

@@ -4,4 +4,12 @@ export interface metadata {
     demo: string
     description: string
     import: string
+    hasVariants: boolean
+    variants: [
+        {
+            variantName: string
+            variant: string
+        }
+    ]
+
 }

@@ -4,6 +4,8 @@ import Sidebar from '@/components/Sidebar'
 import React from 'react'
 
 const page = () => {
+
+
     return (
         <div className='flex  justify-start w-full max-w-screen-2xl pt-16'>
             <Sidebar />

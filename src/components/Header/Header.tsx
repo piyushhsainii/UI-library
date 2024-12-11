@@ -8,8 +8,8 @@ const Header = () => {
     const path = usePathname()
 
     return (
-        <div className='flex justify-center w-full fixed max-w-screen-2xl bg-black/50 z-[80] text-white border-b border-stone-700 border-opacity-35 backdrop-blur-sm'>
-            <div className='flex items-center justify-between w-full px-4'>
+        <div className='flex justify-center w-full relative max-w-screen-2xl mx-auto bg-black/50 z-[80] text-white border-b border-stone-700 border-opacity-35 backdrop-blur-sm'>
+            <div className='flex items-center justify-between w-full px-4 fixed'>
                 <div className='flex items-center gap-5 pl-1'>
                     <Link href={'/'}>
                         <div className='brightness-90 hover:brightness-105 pl-5 md:pl-0 cursor-pointer font-bold sm:pr-3 text-base'>  UI </div>
