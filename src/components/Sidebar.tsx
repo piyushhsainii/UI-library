@@ -6,7 +6,7 @@ import React from 'react'
 const Sidebar = () => {
     const path = usePathname()
     return (
-        <div className='h-[700px] overflow-y-auto overflow-x-hidden min-w-[220px]'>
+        <div className='h-[700px] overflow-y-auto overflow-x-hidden min-w-[220px] hidden md:flex'>
             <div className=' text-white  flex-col  justify-start min-w-[220px] border-b border-r border-stone-800 p-4 hidden md:flex'>
                 <div className='py-4 font-semibold text-sm cursor-pointer'> Follow for updates </div>
                 <Link href={'https://x.com/piyushsainii'} target='_blank' >
@@ -16,7 +16,7 @@ const Sidebar = () => {
                 </Link>
                 <div className='py-5 cursor-pointer'> Getting Started </div>
                 <Link href={'/docs'}>
-                    <div className={`text-base brightness-50 hover:brightness-95 cursor-pointer ${path == "/docs" && "brightness-125"} `}>
+                    <div className={`text-base  hover:brightness-95 cursor-pointer ${path == "/docs" ? "brightness-125" : "brightness-50"} `}>
                         Introduction
                     </div>
                 </Link>

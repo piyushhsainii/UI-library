@@ -6,7 +6,7 @@ import React from 'react'
 
 const page = () => {
     return (
-        <div className='flex  justify-start w-full max-w-screen-2xl pt-16'>
+        <div className='flex  justify-start w-full max-w-screen-2xl pt-16 mx-auto'>
             <Sidebar />
             <div className=" bg-black text-white border-b px-7 max-w-[800px]  border-stone-800  w-[82vw] md:w-full ">
                 <div className='flex gap-2 text-sm p-5'>

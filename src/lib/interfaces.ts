@@ -10,6 +10,11 @@ export interface metadata {
             variantName: string
             variant: string
         }
+    ],
+    manualSteps: [
+        {
+            title: string
+            code: string
+        }
     ]
-
 }

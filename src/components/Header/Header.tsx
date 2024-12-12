@@ -12,7 +12,9 @@ const Header = () => {
             <div className='flex items-center justify-between w-full px-4 fixed'>
                 <div className='flex items-center gap-5 pl-1'>
                     <Link href={'/'}>
-                        <div className='brightness-90 hover:brightness-105 pl-5 md:pl-0 cursor-pointer font-bold sm:pr-3 text-base'>  UI </div>
+                        <div className='brightness-90 hover:brightness-105 pl-5 md:pl-0 cursor-pointer font-bold sm:pr-3 text-base'>
+                            <img src="Logo7.png" alt="" className='h-10 max-w-[100px]' />
+                        </div>
                     </Link>
                     <Link href={'/docs'}>
                         <div className={` ${path == '/docs' ? "brightness-105" : "brightness-50"}  hover:brightness-105 transition-all text-sm md:text-base   duration-200 hidden sm:block cursor-pointer font-sans font-normal tracking-tight`}>Docs</div>
