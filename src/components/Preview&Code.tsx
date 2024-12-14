@@ -8,6 +8,8 @@ import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { Copy } from 'lucide-react';
 import { components } from '@/lib/components';
 import Link from 'next/link';
+import AnimatedCarousel from './UIcomponents/AnimatedCarousel';
+import AnimatedSlider from './UIcomponents/AnimatedSlider';
 const PreviewCode = ({
     metadata,
     installation,
@@ -63,9 +65,32 @@ const PreviewCode = ({
                                     preview[1] == "TextClip" ?
                                         <>
                                             <TextClip variant='redBlue' text='TEXT CLIP' />
-                                        </>
-                                        :
-                                        null
+                                        </> :
+                                        preview[1] == "AnimatedCarousel" ?
+                                            <>
+                                                <AnimatedCarousel
+                                                    img={[
+                                                        "https://res.cloudinary.com/dzow59kgu/image/upload/v1713257800/zvgzb7nwijybs2ef9n88.jpg",
+                                                        "https://res.cloudinary.com/dzow59kgu/image/upload/v1713257656/jpdrbz6fw0qsgsxhbzm1.jpg",
+                                                        "https://res.cloudinary.com/dzow59kgu/image/upload/v1713257800/wpubdtsjofyowibz1euj.jpg",
+                                                    ]}
+                                                />
+                                            </>
+                                            :
+                                            preview[1] == "AnimatedSlider" ?
+                                                <>
+                                                    <AnimatedSlider
+                                                        img={[
+                                                            "https://res.cloudinary.com/dzow59kgu/image/upload/v1713257776/iqtbwyaifajal4zn5t8b.jpg",
+                                                            "https://res.cloudinary.com/dzow59kgu/image/upload/v1713257776/iqtbwyaifajal4zn5t8b.jpg",
+                                                            "https://res.cloudinary.com/dzow59kgu/image/upload/v1713257776/iqtbwyaifajal4zn5t8b.jpg",
+                                                            "https://res.cloudinary.com/dzow59kgu/image/upload/v1713257776/iqtbwyaifajal4zn5t8b.jpg",
+                                                            "https://res.cloudinary.com/dzow59kgu/image/upload/v1713257776/iqtbwyaifajal4zn5t8b.jpg",
+                                                        ]}
+                                                    />
+                                                </>
+                                                :
+                                                null
                             }
                         </div>
                     }
@@ -126,7 +151,7 @@ const PreviewCode = ({
                     }
                     {/* Prev or Next */}
                     {InstallationPreview == 2 && metadata?.manualSteps?.map((Msteps, index) => (
-                        <>
+                        <div key={index}>
                             <div className='my-6 flex flex-col' key={index}>
                                 <div className='flex gap-2 items-center mt-5'>
                                     <div className='p-[0.40rem] px-4 mt-3 m-2 bg-gray-700 bg-opacity-35 rounded-[100%]'> {index + 1} </div>
@@ -143,7 +168,7 @@ const PreviewCode = ({
                                         </SyntaxHighlighter>}
                                 </div>
                             </div>
-                        </>
+                        </div>
                     ))}
                     {
                         InstallationPreview == 2 && <div className='text-center text-xl'> YOU'RE ALL SET! </div>

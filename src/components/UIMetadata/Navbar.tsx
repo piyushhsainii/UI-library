@@ -1,5 +1,5 @@
 const metadata = {
-  cli: 'npx ui-library add navbar',
+  cli: 'npx velour-ui add navbar',
   description: "A Navigation Bar with animation",
   import: `
   import { LeftSideItems, Logo, Navbar, NavbarItem, RightSideItems } from './components/ui/navbar'

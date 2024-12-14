@@ -8,7 +8,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-  @apply bg-black w-[5px] h-[5px];
+  @apply bg-black w-[5px] h-[12px];
 }
 
 ::-webkit-scrollbar-thumb {
