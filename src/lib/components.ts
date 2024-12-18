@@ -4,4 +4,5 @@ export const components = [
   "AnimatedSlider",
   "AnimatedCarousel",
   "Interactive3DParticles",
+  "Modal",
 ];

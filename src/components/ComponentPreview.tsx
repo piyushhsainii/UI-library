@@ -47,7 +47,13 @@ const ComponentPreview = ({ preview }: { preview: string }) => {
                                     >
                                     </video>
                                     :
-                                    null
+                                    preview == "Modal" ?
+                                        <video
+                                            src="https://res.cloudinary.com/dzow59kgu/video/upload/v1734552949/Modal_ddrmap.mp4"
+                                            muted playsInline autoPlay={true} loop
+                                        >
+                                        </video>
+                                        : null
             }
         </div>
     )
