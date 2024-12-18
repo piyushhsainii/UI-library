@@ -5,11 +5,12 @@ import React, { useEffect, useState } from 'react'
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import TextClip from './UIcomponents/TextClip';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
-import { Copy } from 'lucide-react';
+import { Check, Copy } from 'lucide-react';
 import { components } from '@/lib/components';
 import Link from 'next/link';
 import AnimatedCarousel from './UIcomponents/AnimatedCarousel';
 import AnimatedSlider from './UIcomponents/AnimatedSlider';
+import ComponentPreview from './ComponentPreview';
 const PreviewCode = ({
     metadata,
     installation,
@@ -24,7 +25,8 @@ const PreviewCode = ({
 
     const [TogglePreview, setTogglePreview] = useState(1)
     const [InstallationPreview, setInstallationPreview] = useState(1)
-    const [ComponentPreview, setcomponentPreview] = useState<any>(null)
+    const [isCollapsed, setisCollapsed] = useState(false)
+    const [isCopied, setisCopied] = useState<any>(null)
     const path = usePathname()
     const preview = path.split('/docs/components/')
     const component = components.indexOf(componentName)
@@ -54,45 +56,7 @@ const PreviewCode = ({
                                 {metadata?.code}
                             </SyntaxHighlighter>
                         </> :
-                        <div className='border border-stone-700 border-opacity-30   min-h-40 flex justify-center items-center'>
-                            {
-                                preview[1] == "Navbar" ?
-                                    <video
-                                        src="https://res.cloudinary.com/dzow59kgu/video/upload/v1733856142/NavbarV2_ih4hxn.mp4"
-                                        muted playsInline autoPlay={true} loop
-                                    >
-                                    </video> :
-                                    preview[1] == "TextClip" ?
-                                        <>
-                                            <TextClip variant='redBlue' text='TEXT CLIP' />
-                                        </> :
-                                        preview[1] == "AnimatedCarousel" ?
-                                            <>
-                                                <AnimatedCarousel
-                                                    img={[
-                                                        "https://res.cloudinary.com/dzow59kgu/image/upload/v1713257800/zvgzb7nwijybs2ef9n88.jpg",
-                                                        "https://res.cloudinary.com/dzow59kgu/image/upload/v1713257656/jpdrbz6fw0qsgsxhbzm1.jpg",
-                                                        "https://res.cloudinary.com/dzow59kgu/image/upload/v1713257800/wpubdtsjofyowibz1euj.jpg",
-                                                    ]}
-                                                />
-                                            </>
-                                            :
-                                            preview[1] == "AnimatedSlider" ?
-                                                <>
-                                                    <AnimatedSlider
-                                                        img={[
-                                                            "https://res.cloudinary.com/dzow59kgu/image/upload/v1713257776/iqtbwyaifajal4zn5t8b.jpg",
-                                                            "https://res.cloudinary.com/dzow59kgu/image/upload/v1713257776/iqtbwyaifajal4zn5t8b.jpg",
-                                                            "https://res.cloudinary.com/dzow59kgu/image/upload/v1713257776/iqtbwyaifajal4zn5t8b.jpg",
-                                                            "https://res.cloudinary.com/dzow59kgu/image/upload/v1713257776/iqtbwyaifajal4zn5t8b.jpg",
-                                                            "https://res.cloudinary.com/dzow59kgu/image/upload/v1713257776/iqtbwyaifajal4zn5t8b.jpg",
-                                                        ]}
-                                                    />
-                                                </>
-                                                :
-                                                null
-                            }
-                        </div>
+                        <ComponentPreview preview={preview[1] as string} />
                     }
                     {/* INSTALLATION */}
                     <div className=''>
@@ -113,7 +77,7 @@ const PreviewCode = ({
                     {
                         InstallationPreview == 1 &&
                         <div className='my-6 '>
-                            <div className='my-6 flex items-center justify-evenly gap-2'>
+                            <div className='my-6 flex items-center justify-between gap-2'>
                                 <SyntaxHighlighter
                                     language="javascript"
                                     style={vscDarkPlus}
@@ -121,7 +85,19 @@ const PreviewCode = ({
                                 >
                                     {metadata?.cli}
                                 </SyntaxHighlighter>
-                                <Copy size={19} onClick={() => { navigator.clipboard.writeText(metadata.cli) }} />
+                                {
+                                    isCopied == metadata?.cli ?
+                                        <Check color='green' /> :
+                                        <Copy size={19}
+                                            className='cursor-pointer'
+                                            onClick={() => {
+                                                navigator.clipboard.writeText(metadata?.cli),
+                                                    setisCopied(metadata.cli)
+                                                setTimeout(() => {
+                                                    setisCopied(null)
+                                                }, 1500)
+                                            }} />
+                                }
                             </div>
                             <div>
                                 <div className='text-2xl text-slate-200 font-semibold pb-3 border-b border-stone-700 tracking-tight'
@@ -155,17 +131,50 @@ const PreviewCode = ({
                             <div className='my-6 flex flex-col' key={index}>
                                 <div className='flex gap-2 items-center mt-5'>
                                     <div className='p-[0.40rem] px-4 mt-3 m-2 bg-gray-700 bg-opacity-35 rounded-[100%]'> {index + 1} </div>
-                                    <div className='text-2xl tracking-tighter font-semibold'> {Msteps.title} </div>
+                                    <div className='flex justify-between items-center w-full'>
+                                        <div className='text-2xl tracking-tighter font-semibold'> {Msteps.title} </div>
+                                        {
+                                            isCopied == Msteps.title ?
+                                                <Check color='green' /> :
+                                                Msteps.title.includes("Update the import paths to match your project setup.") ?
+                                                    null :
+                                                    <Copy size={19}
+                                                        className='cursor-pointer'
+                                                        onClick={() => {
+                                                            navigator.clipboard.writeText(metadata?.cli),
+                                                                setisCopied(Msteps.title)
+                                                            setTimeout(() => {
+                                                                setisCopied(null)
+                                                            }, 1500)
+                                                        }} />
+                                        }
+                                    </div>
                                 </div>
-                                <div>
+                                <div className='relative' >
                                     {Msteps.code &&
-                                        <SyntaxHighlighter
-                                            language="javascript"
-                                            style={vscDarkPlus}
-                                            customStyle={{ borderRadius: "12px" }}
-                                        >
-                                            {Msteps.code}
-                                        </SyntaxHighlighter>}
+                                        <>
+                                            <SyntaxHighlighter
+                                                language="javascript"
+                                                style={vscDarkPlus}
+                                                customStyle={{
+                                                    borderRadius: "12px",
+                                                    maxHeight: !isCollapsed ? "300px" : "auto",
+                                                    minHeight: isCollapsed == true && Msteps.code.length > 400 ? "600px" : "40px",
+                                                    overflowY: !isCollapsed ? "hidden" : "scroll"
+                                                }}
+                                            >
+                                                {Msteps.code}
+                                            </SyntaxHighlighter>
+                                            {!isCollapsed && Msteps.code.length > 400 ?
+                                                <div onClick={() => setisCollapsed((val) => !val)} className='absolute bottom-10 bg-black/60 px-4 py-2 rounded-xl left-[43%]'>
+                                                    Expand
+                                                </div> :
+                                                Msteps.code.length > 400 ?
+                                                    <div onClick={() => setisCollapsed((val) => !val)} className='absolute bottom-10 bg-black/60 px-4 py-2 rounded-xl left-[43%]'>
+                                                        Collapse
+                                                    </div> : null}
+                                        </>
+                                    }
                                 </div>
                             </div>
                         </div>
