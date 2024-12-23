@@ -29,8 +29,8 @@ const Header = () => {
                     <Link href={'/templates'}>
                         <div className={` ${path == '/templates' ? "brightness-105" : "brightness-50"} hover:brightness-105 transition-all text-sm md:text-base   duration-200 hidden sm:block cursor-pointer font-sans font-normal tracking-tight`}>Templates</div>
                     </Link>
-                    <Link href={'/pricing'}>
-                        <div className={` ${path == '/pricing' ? "brightness-105" : "brightness-50"} hover:brightness-105 transition-all text-sm md:text-base   duration-200 hidden sm:block cursor-pointer font-sans font-normal tracking-tight`}>Pricing</div>
+                    <Link href={'/contact'}>
+                        <div className={` ${path == '/pricing' ? "brightness-105" : "brightness-50"} hover:brightness-105 transition-all text-sm md:text-base   duration-200 hidden sm:block cursor-pointer font-sans font-normal tracking-tight`}>Contact</div>
                     </Link>
                 </div>
                 <div className='flex items-center gap-4 px-3 py-4'>

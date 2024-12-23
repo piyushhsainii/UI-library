@@ -1,7 +1,8 @@
-import { components } from '@/lib/components'
+import { components, threeD } from '@/lib/components'
+import { div } from 'framer-motion/client'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import React from 'react'
+import React, { Fragment } from 'react'
 
 const Sidebar = () => {
     const path = usePathname()
@@ -27,15 +28,26 @@ const Sidebar = () => {
                 </Link>
                 <div className='py-5  font-nromal brightness-90 tracking-tight'> Components </div>
                 <div className='h-72 px-1  hide-scrollbar'>
-                    {
-                        components?.map((comnts) => (
+                    <div className='font-semibold my-4'> 3D Components </div>
+                    {threeD.map((threeD) => (
+                        <Fragment key={threeD}>
+                            <Link href={`/templates/${threeD}`}>
+                                <div className={`${path == `/docs/components/${threeD}` ? 'brightness-110' : 'brightness-50'} my-1 text-base   hover:brightness-110 duration-200 transition-all cursor-pointer`}>
+                                    {threeD}
+                                </div>
+                            </Link>
+                        </Fragment>
+                    ))}
+                    <div className='font-semibold my-4 mt-10'> Animated Components </div>
+                    {components?.map((comnts) => (
+                        <Fragment key={comnts}>
                             <Link key={comnts} href={`/docs/components/${comnts}`}>
                                 <div className={`${path == `/docs/components/${comnts}` ? 'brightness-110' : 'brightness-50'} my-1 text-base   hover:brightness-110 duration-200 transition-all cursor-pointer`}>
                                     {comnts}
                                 </div>
                             </Link>
-                        ))
-                    }
+                        </Fragment>
+                    ))}
                 </div>
             </div>
 

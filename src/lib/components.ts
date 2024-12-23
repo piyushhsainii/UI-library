@@ -6,3 +6,7 @@ export const components = [
   "Interactive3DParticles",
   "Modal",
 ];
+
+export const threeD = [
+  '3D-ProductCarousel'
+]
