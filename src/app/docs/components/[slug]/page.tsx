@@ -4,8 +4,6 @@ import Sidebar from '@/components/Sidebar'
 import React from 'react'
 
 const page = () => {
-
-
     return (
         <div className='flex  justify-center w-full max-w-screen-2xl pt-16 m-auto'>
             <Sidebar />
@@ -13,6 +11,7 @@ const page = () => {
                 <CodeStructure />
             </div>
         </div>
+
     )
 }
 

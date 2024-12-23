@@ -31,6 +31,11 @@ const Loader = ({
         }, 1);
     }, [setIsLoaded]);
 
+    const radius = 40; // Radius of the circle
+    const strokeWidth = 0.5; // Thickness of the circle
+    const circumference = 10 * Math.PI * radius;
+    const offset = circumference - (progress / 100) * circumference;
+
     useEffect(() => {
         if (typeof window === 'undefined') return;
 
@@ -80,14 +85,46 @@ const Loader = ({
                 className={`fixed top-0 left-0 h-screen w-screen flex flex-col justify-center items-center loader-background-2 z-50`}
                 style={{ opacity: opacity / 100 }}
             >
-                {/* <div className={`text-[3.2rem] tracking-wide text-themeAccent p-2 pb-1`}>Vexio</div> */}
-                <div className='text-white text-lg'>Not a fake Loader</div>
-                <div className="w-[250px] m-2 my-10 mt-7 bg-gray-700 h-1 rounded-full">
-                    <div
-                        className="h-full bg-blue-500 rounded-full transition-all duration-300 ease-out"
-                        style={{ width: `${progress}%` }}
+                <div className={`text-xl tracking-tight font-light text-white`}> VELOUR UI </div>
+                <svg
+                    width="360"
+                    height="360"
+                    viewBox="0 0 120 120"
+                    className="transform -rotate-90"
+                >
+                    <circle
+                        cx="57"
+                        cy="60"
+                        r={radius}
+                        fill="none"
+                        stroke="#e2e8f0"
+                        strokeWidth={strokeWidth}
                     />
-                </div>
+                    <circle
+                        cx="57"
+                        cy="60"
+                        r={radius}
+                        fill="none"
+                        stroke="#64748b " // Tailwind green-500 (use Tailwind class in styles for colors if needed)
+                        strokeWidth={strokeWidth}
+                        strokeDasharray={circumference}
+                        strokeDashoffset={offset}
+                        strokeLinecap="round"
+                        className="transition-all ease-in-out duration-500"
+                    />
+                    <text
+                        x="60"
+                        y="65"
+                        textAnchor="middle"
+                        width={2}
+                        className="fill-slate-200 text-[0.350rem] font-light tracking-wider "
+                        transform="rotate(90, 60, 60)"
+                    >
+                        {progress}%
+                    </text>
+                </svg>
+                <div className={`text-sm tracking-tight font-light text-white`}> NOT A FAKE LOADER </div>
+
             </div>
         </Fragment>
     );
