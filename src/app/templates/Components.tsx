@@ -12,12 +12,12 @@ const Components = () => {
                             {cmptns.type == "image" ?
                                 <>
                                     <div className='text-lg text-[#cfcfcf] p-3 pl-0 font-semibold'> {cmptns.title} </div>
-                                    <div className='text-base text-white'>{cmptns.description}</div>
+                                    <div className='text-base text-white brightness-75 p-1 pl-0 '>{cmptns.description}</div>
                                     <img src={cmptns.url} alt=""
                                         className='  pb-1  object-contain' />
                                 </> : <>
                                     <div className='text-lg text-[#cfcfcf] p-3 pl-0 font-semibold'> {cmptns.title} </div>
-                                    <div className='text-base text-white'>{cmptns.description}</div>
+                                    <div className='text-base text-white brightness-75 p-1 pl-0 '>{cmptns.description}</div>
                                     <video src={cmptns.url}
                                         autoPlay muted loop className='w-auto h-auto  scale-105 rounded-lg my-1'>
                                     </video>

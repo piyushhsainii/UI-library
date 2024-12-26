@@ -25,7 +25,7 @@ const Footer = () => {
                     <div></div>
                 </div>
             </div>
-            <hr className='w-[90%] mx-auto border-t border-slate-700' />
+            <hr className='w-[90%] mx-auto border-t border-stone-700 border-opacity-45' />
             <div className='text-sm  my-3  w-full pl-8 p-3  '>
                 <div className='text-[#9c9c9c]'> &copy; 2024 Velour UI. All Rights reserved.</div>
                 <div className='text-[#9c9c9c]'> Privacy Policy | Terms of Service | Refund Policy </div>

@@ -14,11 +14,12 @@ const page = () => {
     const data = componentsData.find((data) => data.componentName == tempName)
 
     return (
-        <div className='h-[90vh] flex justify-start w-full mt-20 gap-5 max-w-screen-2xl mx-auto transition-all duration-200' >
-            <Link href={'/templates'}>  <div
-                className='text-white flex w-[180px] mt-10 hover:gap-3 text-center justify-center brightness-50 hover:brightness-105 transition-all duration-200  ml-5 hover:underline cursor-pointer'>
-                <ArrowLeft color='white' className='' /> Back to Templates </div> </Link>
-            <div className='text-white mx-6 mt-10'>
+        <div className='h-[90vh] flex justify-center w-full mt-20 gap-5 max-w-screen-2xl mx-auto transition-all duration-200' >
+            <div className='text-white mx-6 mt-2 flex flex-col gap-4'>
+                <Link href={'/templates'}>  <div
+                    className='text-white flex w-[180px] mt-10 hover:gap-3 text-center justify-center brightness-50 hover:brightness-105 transition-all duration-200 hover:underline cursor-pointer'>
+                    <ArrowLeft color='white' className='' /> Back to Templates </div>
+                </Link>
                 {data?.type == "image" ?
                     <img src={data.url} alt="" className='max-h-[500px] max-w-[500px]' /> :
                     <video src={data?.url} muted autoPlay loop className='max-h-[500px] max-w-[500px]' ></video>

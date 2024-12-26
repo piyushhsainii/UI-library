@@ -77,19 +77,8 @@ export const data = [
                 description: "Run the shadcn-ui init command to setup your project:",
                 code: [{
                     title: "",
-                    code: "npx shadcn@latest init"
+                    code: "npx velour-ui init"
                 }]
-            },
-            {
-                title: "Configure components.json",
-                description: "You will be asked a few questions to configure components.json:",
-                code: [
-                    {
-                        title: "",
-                        code: `\nWhich style would you like to use? › New York\nWhich color would you like to use as base color? › Zinc\nDo you want to use CSS variables for colors? › no / yes
-                        `
-                    }
-                ]
             },
             {
                 title: "That's it",
@@ -97,7 +86,7 @@ export const data = [
                 code: [
                     {
                         title: "",
-                        code: "npx shadcn@latest add button"
+                        code: "npx velour-ui add button"
                     },
                     {
                         title: "The command above will add the Button component to your project. You can then import it like this:",
@@ -119,29 +108,14 @@ export const data = [
                 description: "Run the init command to create a new Next.js project or to setup an existing one:",
                 code: [{
                     title: "",
-                    code: "npx shadcn@latest init"
-                }, {
-                    title: "You can use the -d flag for defaults i.e new-york, zinc and yes for the css variables.",
-                    code: "npx shadcn@latest init -d"
+                    code: "npx create-next-app@latest "
                 }]
-
-            },
-            {
-                title: "Configure components.json",
-                description: "You will be asked a few questions to configure components.json:",
-                code: [{
-                    title: "",
-                    code: `\nWhich style would you like to use? › New York\nWhich color would you like to use as base color? › Zinc\nDo you want to use CSS variables for colors? › no / yes
-                    `
-                },]
-
-            },
-            {
+            }, {
                 title: "That's it",
                 description: "You can now start adding components to your project.",
                 code: [{
                     title: "",
-                    code: `npx shadcn@latest add button`
+                    code: `npx velour-ui add button`
                 }, {
                     title: "The command above will add the Button component to your project. You can then import it like this",
                     code: `\nimport { Button } from "@/components/ui/button"\nexport default function Home() {\nreturn (\n<div>\n<Button>Click me</Button>\n</div>\n)\n}

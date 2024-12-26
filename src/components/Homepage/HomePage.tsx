@@ -10,7 +10,7 @@ const HomePage = () => {
                     <div> A Marketplace for</div>
                     <div>  Designers and Developers</div>
                 </div>
-                <div className='text-slate-500 text-xl  m-4 mb-0   p-2'>
+                <div className='text-slate-500 text-xl  m-4 mb-0 mt-2  p-2'>
                     Reaching the peak of UI elegance and performance.
                 </div>
                 <div className='text-slate-500 text-base '>

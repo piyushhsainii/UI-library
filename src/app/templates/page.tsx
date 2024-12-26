@@ -9,7 +9,7 @@ type activeTab = "Components" | "Portfolio" | "Product Page" | "Dashboard" | "E-
 const page = () => {
 
     const templatesTypes = ['Components', 'Portfolio', 'Product Page', 'Dashboard', 'E-Commerce', "Free To Use"]
-    const templatesLength = [componentsData.length, '0', '0', '0', '0', '0']
+    const templatesLength = [componentsData.length, '0', '0', '0', '0', componentsData.filter((data) => data.isPaid == false).length]
     const [activeTab, setActiveTab] = useState<activeTab>('Components')
 
     return (
@@ -26,10 +26,10 @@ const page = () => {
                         > {temp} ({templatesLength[index]}) </div>
                     ))}
                 </div>
-                <div className='flex items-center gap-4 cursor-pointer '>
+                {/* <div className='flex items-center gap-4 cursor-pointer '>
                     <div className='brightness-50 hover:brightness-105 transition-all duration-200'>Clear All </div>
                     <div className='brightness-50 hover:brightness-105 transition-all duration-200'>Filters</div>
-                </div>
+                </div> */}
             </div>
             <div>
                 {activeTab == "Components" ? <Components /> :

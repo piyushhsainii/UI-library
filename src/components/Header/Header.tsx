@@ -1,5 +1,5 @@
 'use client'
-import { BookOpen, Command, File, LucideGithub, Search } from 'lucide-react'
+import { BookOpen, Command, File, LucideGithub, Search, Twitter } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React, { useState } from 'react'
@@ -72,7 +72,7 @@ const Header = () => {
                         </div>
                     </Modal>
                     <div> <Link href={'https://github.com/piyushhsainii'} target='_blank'><LucideGithub size={17} /> </Link> </div>
-                    <div>  </div>
+                    <div><Link href={'https://x.com/piyushsainii'} target='_blank'><Twitter size={17} /> </Link>   </div>
                 </div>
             </div>
         </div>
