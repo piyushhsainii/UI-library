@@ -1,15 +1,15 @@
 'use client'
 import React, { useState } from 'react'
-import { Typewriter } from 'react-simple-typewriter'
-import TemplateCard from './templateCard'
 import Components from './Components'
-import { div } from 'framer-motion/client'
+import FreeToUse from './FreeToUse'
+import { componentsData } from './data/componentsData'
 
 type activeTab = "Components" | "Portfolio" | "Product Page" | "Dashboard" | "E-Commerce" | "Free To Use"
 
 const page = () => {
 
     const templatesTypes = ['Components', 'Portfolio', 'Product Page', 'Dashboard', 'E-Commerce', "Free To Use"]
+    const templatesLength = [componentsData.length, '0', '0', '0', '0', '0']
     const [activeTab, setActiveTab] = useState<activeTab>('Components')
 
     return (
@@ -19,11 +19,11 @@ const page = () => {
             </div>
             <div className='flex justify-between items-center px-5 m-4 text-slate-200 mt-5'>
                 <div className='flex gap-6 max-w-[1200px] border border-slate-700 border-opacity-70 rounded-2xl px-8 py-1 '>
-                    {templatesTypes.map((temp) => (
-                        <div key={temp} className={`hover:brightness-105 cursor-pointer transition-all duration-200
+                    {templatesTypes.map((temp, index) => (
+                        <div key={temp} className={`hover:brightness-105 cursor-pointer transition-all duration-200 flex items-center
                         ${temp == activeTab ? "brightness-105" : "brightness-50 "}`}
                             onClick={() => setActiveTab(temp as activeTab)}
-                        > {temp} </div>
+                        > {temp} ({templatesLength[index]}) </div>
                     ))}
                 </div>
                 <div className='flex items-center gap-4 cursor-pointer '>
@@ -33,10 +33,12 @@ const page = () => {
             </div>
             <div>
                 {activeTab == "Components" ? <Components /> :
-                    <div className='h-[50vh] flex items-center justify-center mx-auto text-2xl font-semibold text-white text-center'>
-                        Templates of this Category <br></br>
-                        Coming Soon!
-                    </div>
+                    activeTab == "Free To Use" ? <FreeToUse /> :
+                        <div className='h-[50vh] flex items-center justify-center mx-auto text-2xl font-semibold text-white text-center'>
+                            Templates of this Category <br></br>
+                            Coming Soon!
+                        </div>
+
                 }
 
             </div>

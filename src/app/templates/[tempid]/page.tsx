@@ -10,7 +10,6 @@ const page = () => {
     const host = window.location.host
     const searchParams = usePathname()
     const [isCopied, setisCopied] = useState(false)
-    console.log(searchParams)
     const tempName = params?.tempid
     const data = componentsData.find((data) => data.componentName == tempName)
 
@@ -30,11 +29,12 @@ const page = () => {
                 <div className='text-base text-gray-400 m-1'> {data?.description}  </div>
                 {data?.isPaid == true ? <div className='text-2xl'> {data?.price} </div> :
                     <div className='text-green-500 font-semibold tracking-tight text-lg ml-1'> Free To Use </div>}
-                <div className='flex items-center m-1 my-5'>
+                <div className='flex items-center m-1 my-5 gap-2'>
                     {isCopied == true ?
-                        <Check /> :
-                        <Share onClick={() => { window.navigator.clipboard.writeText(host + searchParams), setisCopied(true), setTimeout(() => { setisCopied(false) }, 1200) }} />
+                        <Check size={18} /> :
+                        <Share size={18} onClick={() => { window.navigator.clipboard.writeText(host + searchParams), setisCopied(true), setTimeout(() => { setisCopied(false) }, 1200) }} />
                     }
+                    {/* <Link href={`${searchParams}/demo`}> <div className='cursor-pointer hover:underline hover:text-slate-300'> Checkout Live Demo </div></Link> */}
                 </div>
                 <div className='text-lg'> What you'll get after purchase: </div>
                 <div className='text-base m-5 my-3 ml-0 tracking-tight'> A customised component like this  in your website <br></br>

@@ -2,12 +2,12 @@ import React from 'react'
 import { componentsData } from './data/componentsData'
 import Link from 'next/link'
 
-const Components = () => {
+const FreeToUse = () => {
     return (
-        <div className='h-[700px] flex flex-wrap '>
-            {componentsData.map((cmptns) => (
+        <div className='h-[700px] flex flex-wrap'>
+            {componentsData.filter((data) => data.isPaid == false).map((cmptns) => (
                 <Link href={`/templates/${cmptns.componentName}`} key={cmptns.title}>
-                    <div className='p-3 max-h-[500px] overflow-hidden m-7 border border-slate-700 hover:bg-slate-950 border-opacity-50 hover cursor-pointer max-w-[350px] min-w-[300px] rounded-lg'>
+                    <div className='p-3 max-h-[500px] overflow-hidden m-7 border border-slate-700 border-opacity-50 hover cursor-pointer max-w-[350px] min-w-[300px] rounded-lg'>
                         <div key={cmptns.url} className='m-2'>
                             {cmptns.type == "image" ?
                                 <>
@@ -28,4 +28,4 @@ const Components = () => {
         </div>
     )
 }
-export default Components
+export default FreeToUse
