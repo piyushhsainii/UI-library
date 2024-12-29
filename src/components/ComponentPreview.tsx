@@ -2,6 +2,8 @@ import React from 'react'
 import AnimatedSlider from './UIcomponents/AnimatedSlider'
 import TextClip from './UIcomponents/TextClip'
 import AnimatedCarousel from './UIcomponents/AnimatedCarousel'
+import Modal, { ModalTrigger } from './UIcomponents/Modal'
+import Flipcard from './UIcomponents/Flipcard'
 
 const ComponentPreview = ({ preview }: { preview: string }) => {
     return (
@@ -48,12 +50,29 @@ const ComponentPreview = ({ preview }: { preview: string }) => {
                                     </video>
                                     :
                                     preview == "Modal" ?
-                                        <video
-                                            src="https://res.cloudinary.com/dzow59kgu/video/upload/v1734552949/Modal_ddrmap.mp4"
-                                            muted playsInline autoPlay={true} loop
-                                        >
-                                        </video>
-                                        : null
+                                        // <video
+                                        //     src="https://res.cloudinary.com/dzow59kgu/video/upload/v1734552949/Modal_ddrmap.mp4"
+                                        //     muted playsInline autoPlay={true} loop
+                                        // >
+                                        // </video>
+                                        <Modal >
+                                            <ModalTrigger className='bg-slate-700 px-4 py-2 rounded-md cursor-pointer hover:bg-slate-800'>
+                                                Modal
+                                            </ModalTrigger>
+                                            <div className='h-full flex items-center justify-center'>
+                                                This is Modal
+                                            </div>
+                                        </Modal> :
+                                        preview == "Flipcard"
+                                            ?
+                                            <div className='w-[350px]'>
+                                                <Flipcard img="https://res.cloudinary.com/dzow59kgu/image/upload/v1733157790/nrqcosisdpnb149prpqu.jpg">
+                                                    <div>
+                                                        This is ROBOT
+                                                    </div>
+                                                </Flipcard>
+                                            </div>
+                                            : null
             }
         </div>
     )
