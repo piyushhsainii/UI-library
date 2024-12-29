@@ -19,8 +19,8 @@ const CodeStructure = () => {
         getMetadata()
     }, [])
     return (
-        <div className='text-slate-200 pt-6 p-3 font-sans px-9 h-[100vh] flex  '>
-            <div className='overflow-y-scroll pr-4'>
+        <div className='text-slate-200 pt-6 md:p-3 font-sans md:px-9 h-[100vh] flex  '>
+            <div className='overflow-y-scroll md:pr-4'>
                 <div className='flex gap-2 text-sm'> <div className='text-stone-400'>Docs </div>{`> ${componentName[1]} `} </div>
                 <div className='text-[1.7rem] font-semibold py-2 pb-0'>
                     {componentName[1]}
@@ -29,8 +29,8 @@ const CodeStructure = () => {
                 <div className='text-stone-300 text-sm py-3'>  </div>
                 <PreviewCode metadata={metaData!} installation={installation!} usage={usage!} componentName={componentName[1]} />
             </div>
-            <div className='max-h-[700px] right-3 hidden md:block'>
-                <div className=' px-10 min-w-[300px]'>
+            <div className='max-h-[700px] right-3 hidden lg:block'>
+                <div className=' px-4 lg:px-10 min-w-[200px]'>
                     <div className='my-5 font-semibold'> On this Page </div>
                     <div className={`my-1 cursor-pointer  ${activeComponent === "Installation" ? "brightness-105" : "brightness-50"} hover:brightness-105 duration-200 transition-all`} id='installation'
                         onClick={() => {

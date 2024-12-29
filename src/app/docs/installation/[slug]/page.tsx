@@ -91,7 +91,7 @@ const Page = () => {
                         }
                     </div>
                 </div>
-                <div className='max-h-[700px] right-3 hidden md:block'>
+                <div className='max-h-[700px] right-3 hidden lg:block'>
                     <div className=' px-10 min-w-[300px]'>
                         <div className='my-5 font-semibold'> On this Page </div>
                         {FrameworkData?.steps.map((title) => (

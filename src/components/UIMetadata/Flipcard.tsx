@@ -81,6 +81,30 @@ export default Flipcard;
             title: "Update the import paths to match your project setup."
         },
 
+    ],
+    additionalSteps: [
+        {
+            title: "Copy this code into your global.css",
+            desc: `.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-inner {
+  transition: transform 0.8s;
+}
+
+.flip-card-front,
+.flip-card-back {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+            `
+        }
     ]
 
 

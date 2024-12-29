@@ -31,7 +31,7 @@ const page = () => {
                     <div className='brightness-50 hover:brightness-105 transition-all duration-200'>Filters</div>
                 </div> */}
             </div>
-            <div>
+            <div >
                 {activeTab == "Components" ? <Components /> :
                     activeTab == "Free To Use" ? <FreeToUse /> :
                         <div className='h-[50vh] flex items-center justify-center mx-auto text-2xl font-semibold text-white text-center'>

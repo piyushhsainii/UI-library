@@ -16,5 +16,11 @@ export interface metadata {
             title: string
             code: string
         }
+    ],
+    additionalSteps: [
+        {
+            title: string,
+            desc: string
+        }
     ]
 }

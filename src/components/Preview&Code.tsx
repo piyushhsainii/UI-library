@@ -8,8 +8,6 @@ import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { Check, Copy } from 'lucide-react';
 import { components } from '@/lib/components';
 import Link from 'next/link';
-import AnimatedCarousel from './UIcomponents/AnimatedCarousel';
-import AnimatedSlider from './UIcomponents/AnimatedSlider';
 import ComponentPreview from './ComponentPreview';
 const PreviewCode = ({
     metadata,
@@ -37,7 +35,7 @@ const PreviewCode = ({
 
     return (
         <div className='flex w-full overflow-y-auto'>
-            <div className='min-w-[700px]  min-h-[300px] '>
+            <div className='w-full lg:min-w-[700px]  min-h-[300px] '>
                 <div className='border-b border-stone-600 border-opacity-30 flex gap-4 '>
                     <div onClick={() => setTogglePreview(1)}
                         className={`font-medium  ${TogglePreview == 1 ? "brightness-125 border-b border-white" : "brightness-75"} py-2 px-2 cursor-pointer`}>
@@ -99,6 +97,21 @@ const PreviewCode = ({
                                             }} />
                                 }
                             </div>
+                            {/* if additional steps -  */}
+                            {
+                                metadata?.additionalSteps?.map((data, index) => (
+                                    <div key={index} className=''>
+                                        <div> {data.title} </div>
+                                        <SyntaxHighlighter
+                                            language="javascript"
+                                            style={vscDarkPlus}
+                                            customStyle={{ borderRadius: "12px", width: "90%" }}
+                                        >
+                                            {data.desc}
+                                        </SyntaxHighlighter>
+                                    </div>
+                                ))
+                            }
                             <div>
                                 <div className='text-2xl text-slate-200 font-semibold pb-3 border-b border-stone-700 tracking-tight'
                                     ref={usage}

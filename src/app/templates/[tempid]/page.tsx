@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { componentsData } from '../data/componentsData'
 import { useParams, usePathname } from 'next/navigation'
 import Link from 'next/link'
+import Modal, { ModalTrigger } from '@/components/UIcomponents/Modal'
 
 const page = () => {
     const params = useParams()
@@ -17,7 +18,7 @@ const page = () => {
         <div className='h-[90vh] flex justify-center w-full mt-20 gap-5 max-w-screen-2xl mx-auto transition-all duration-200' >
             <div className='text-white mx-6 mt-2 flex flex-col gap-4'>
                 <Link href={'/templates'}>  <div
-                    className='text-white flex w-[180px] mt-10 hover:gap-3 text-center justify-center brightness-50 hover:brightness-105 transition-all duration-200 hover:underline cursor-pointer'>
+                    className='text-white flex w-[180px] mt-10 hover:gap-2 text-center justify-center brightness-50  transition-all duration-200 hover:underline cursor-pointer'>
                     <ArrowLeft color='white' className='' /> Back to Templates </div>
                 </Link>
                 {data?.type == "image" ?
@@ -42,12 +43,26 @@ const page = () => {
                     tailored according to your needs.
                 </div>
                 <div className='flex gap-3 my-8'>
-                    <button className=' px-4 py-2  bg-slate-700 rounded-lg'>
-                        {data?.isPaid ?
-                            <div>Request this Component</div>
-                            : <Link href={`/docs/components/${data?.componentName}`}><div>Get Started</div></Link>}
-                    </button>
-                    <button className=' px-4 py-2 border-slate-700 border rounded-lg'> Get in Touch </button>
+                    {data?.isPaid &&
+                        <div className=' px-4 py-2  bg-slate-700 rounded-lg'>
+                            <Modal>
+                                <ModalTrigger>
+                                    Request this Component
+                                </ModalTrigger>
+                                <div className='text-pretty flex flex-col items-center justify-center h-full'>
+                                    <div className='text-3xl p-3'>{data.title}  </div>
+                                    <div className='px-7 text-center text-base'
+                                    > Upon purchasing this component <br></br> we will contact you within 24 hours and get in touch to
+                                        discuss your product requirements. </div>
+                                    <button className='bg-green-500 px-4 py-2 text-black m-3 rounded-lg font-semibold'> BUY COMPONENT {data.price} </button>
+                                </div>
+                            </Modal>
+                        </div>}
+                    {!data?.isPaid &&
+                        <button className=' px-4 py-2  bg-slate-700 rounded-lg'>
+                            <Link href={`/docs/components/${data?.componentName}`}><div>Download</div></Link>
+                        </button>}
+                    <Link href={'/contact'}><button className=' px-4 py-2 border-slate-700 border rounded-lg'> Get in Touch </button></Link>
                 </div>
             </div>
         </div>

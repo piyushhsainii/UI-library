@@ -7,8 +7,8 @@ import React, { Fragment } from 'react'
 const Sidebar = () => {
     const path = usePathname()
     return (
-        <div className='h-[700px] overflow-y-auto overflow-x-hidden min-w-[220px] hidden md:flex'>
-            <div className=' text-white  flex-col  justify-start min-w-[220px] border-b border-r border-stone-800 p-4 hidden md:flex'>
+        <div className='max-h-[500px] overflow-y-scroll overflow-x-hidden min-w-[240px] hidden lg:flex border-r border-stone-800'>
+            <div className=' text-white  flex-col  justify-start min-w-[240px]   p-4 hidden lg:flex'>
                 <div className='py-4 font-semibold text-sm cursor-pointer'> Follow for updates </div>
                 <Link href={'https://x.com/piyushsainii'} target='_blank' >
                     <div className='text-zinc-500 text-sm cursor-pointer'>
@@ -26,7 +26,6 @@ const Sidebar = () => {
                         Installation
                     </div>
                 </Link>
-                <div className='py-5  font-nromal brightness-90 tracking-tight'> Components </div>
                 <div className='h-72 px-1  hide-scrollbar'>
                     <div className='font-semibold my-4'> 3D Components </div>
                     {threeD.map((threeD) => (

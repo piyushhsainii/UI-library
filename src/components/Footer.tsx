@@ -5,7 +5,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <div className='h-[220px] '>
+        <div className='h-[220px] max-w-screen-2xl mx-auto'>
             <div className='flex justify-between'>
                 <div className='flex flex-col m-4'>
                     <Image src={'/logo7.png'} width={70} height={70} alt='logo' className='h-[30px] m-4 mb-0' />

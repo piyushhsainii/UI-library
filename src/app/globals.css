@@ -15,6 +15,24 @@ body {
   @apply w-[5px] bg-slate-800 rounded-full opacity-0 transition-opacity duration-300;
 }
 
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-inner {
+  transition: transform 0.8s;
+}
+
+.flip-card-front,
+.flip-card-back {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
 
 .hide-scrollbar {
   -ms-overflow-style: none;

@@ -17,7 +17,7 @@ const page = () => {
                 <div className='border-b border-slate-300 border-opacity-25 px-4 text-3xl tracking-tight py-6 pb-4'>
                     Frameworks
                 </div>
-                <div className='flex '>
+                <div className='flex flex-wrap'>
                     {frameworks?.map((frmks) => (
                         <Link href={`/docs/installation/${frmks}`} key={frmks} >
                             <div className='p-16 w-[300px] px-24 border border-stone-400  rounded-xl border-opacity-40 m-6

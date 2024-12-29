@@ -1,12 +1,16 @@
 export const components = [
-  "Navbar",
-  "TextClip",
   "AnimatedSlider",
   "AnimatedCarousel",
+  'Flipcard',
+  'Slider',
   "Interactive3DParticles",
   "Modal",
+  "TextClip",
+  "Navbar",
 ];
 
 export const threeD = [
-  '3D-ProductCarousel'
+  'buymeacoffee',
+  '3D-ProductCarousel',
+  'Interactive3DParticles',
 ]

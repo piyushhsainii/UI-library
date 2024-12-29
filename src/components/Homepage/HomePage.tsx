@@ -10,14 +10,14 @@ const HomePage = () => {
                     <div> A Marketplace for</div>
                     <div>  Designers and Developers</div>
                 </div>
-                <div className='text-slate-500 text-xl  m-4 mb-0 mt-2  p-2'>
+                <div className='text-slate-500 text-xl  m-4 mb-0 mt-2 p-2 text-center'>
                     Reaching the peak of UI elegance and performance.
                 </div>
-                <div className='text-slate-500 text-base '>
+                <div className='text-slate-500 text-base text-center w-[80%]'>
                     Build for Free, Buy with Ease, Earn Without Limits.
                 </div>
-                <div className='flex my-4 justify-center gap-5'>
-                    <Link href={'/docs/components/Interactive3DParticles'} >
+                <div className='flex flex-col md:flex-row my-4 justify-center gap-5'>
+                    <Link href={'/docs/components/Modal'} >
                         <button className='bg-slate-300 px-4 py-2 min-w-[150px] rounded-md text-black font-semibold border-opacity-70
                  hover:bg-slate-400 transition-all duration-200
                  '>

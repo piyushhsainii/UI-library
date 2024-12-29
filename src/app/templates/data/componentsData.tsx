@@ -9,7 +9,8 @@ export const componentsData = [
         isReUseable: true,
         componentType: "component",
         isPaid: false,
-        hasDemo: true
+        hasDemo: true,
+        tag: "Popular"
     },
     {
         type: "video",             //img or video
@@ -21,7 +22,8 @@ export const componentsData = [
         isReUseable: false,
         componentType: "component",
         isPaid: true,
-        hasDemo: true
+        hasDemo: true,
+        tag: "Popular"
     },
     {
         type: "video",             //img or video
@@ -33,7 +35,8 @@ export const componentsData = [
         isReUseable: false,
         componentType: "component",
         isPaid: false,
-        hasDemo: true
+        hasDemo: true,
+        tag: ""
     },
     {
         type: "image",             //img or video
@@ -45,7 +48,8 @@ export const componentsData = [
         isReUseable: true,
         componentType: "component",
         isPaid: false,
-        hasDemo: true
+        hasDemo: true,
+        tag: ""
     },
 
 ]

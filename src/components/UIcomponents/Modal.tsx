@@ -49,8 +49,7 @@ const Modal = ({
             <AnimatePresence>
                 {isModalOpen &&
                     <>
-                        <BackDrop classname={backdropClassname} />
-                        <div className='max-w-screen-2xl h-screen w-[99vw] absolute inset-y-0 inset-x-0 bg-black/40  z-[60] mt-20'>
+                        <div className='max-w-screen-2xl h-screen w-[99vw] absolute inset-y-0 inset-x-0 bg-black/60  z-[60] mt-20'>
                             <motion.div
                                 ref={modal}
                                 className={cn(modalClassName, `h-[400px] w-[75vw] max-w-[600px] bg-black text-white 
