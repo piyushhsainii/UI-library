@@ -51,5 +51,18 @@ export const componentsData = [
         hasDemo: true,
         tag: ""
     },
+    {
+        type: "video",             //img or video
+        title: "Lazy Programmer",
+        description: "An Animated 2D graphic of a lazy programmer",
+        componentName: "LazyProgrammer",
+        url: "https://res.cloudinary.com/dzow59kgu/video/upload/v1736346634/Timeline_1_vyj8vp.mp4",
+        price: "",
+        isReUseable: true,
+        componentType: "2dGraphics",
+        isPaid: false,
+        hasDemo: true,
+        tag: ""
+    },
 
 ]

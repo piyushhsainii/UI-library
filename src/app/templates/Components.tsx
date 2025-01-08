@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const Components = () => {
     return (
-        <div className='h-[700px] flex flex-wrap '>
+        <div className='min-h-[700px] h-auto flex flex-wrap '>
             {componentsData.map((cmptns) => (
                 <Link href={`/templates/${cmptns.componentName}`} key={cmptns.title}>
                     <div className='p-3 max-h-[500px] overflow-hidden m-7 my-2 border border-slate-700 bg-black hover:bg-slate-950  border-opacity-50 hover cursor-pointer max-w-[350px] min-w-[300px] rounded-lg'>

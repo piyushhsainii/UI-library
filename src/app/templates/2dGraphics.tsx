@@ -2,10 +2,10 @@ import React from 'react'
 import { componentsData } from './data/componentsData'
 import Link from 'next/link'
 
-const FreeToUse = () => {
+const Graphics = () => {
     return (
-        <div className='min-h-[700px] flex flex-wrap h-auto'>
-            {componentsData.filter((data) => data.isPaid == false).map((cmptns) => (
+        <div className='h-[700px] flex flex-wrap'>
+            {componentsData.filter((data) => data.componentType == "2dGraphics").map((cmptns) => (
                 <Link href={`/templates/${cmptns.componentName}`} key={cmptns.title}>
                     <div className='p-3 max-h-[500px] overflow-hidden m-7 border border-slate-700 border-opacity-50 hover cursor-pointer max-w-[350px] min-w-[300px] rounded-lg'>
                         <div key={cmptns.url} className='m-2'>
@@ -28,4 +28,4 @@ const FreeToUse = () => {
         </div>
     )
 }
-export default FreeToUse
+export default Graphics

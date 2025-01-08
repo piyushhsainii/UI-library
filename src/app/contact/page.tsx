@@ -1,9 +1,22 @@
+'use client'
+import { createClient } from '@/lib/supabase'
 import { Send } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 
 const page = () => {
+    const [name, setname] = useState('')
+    const [message, setmessage] = useState('')
+    const supabase = createClient()
+
+    const sendMessage = async () => {
+        await supabase.from("users").insert({
+            name: name,
+            message: message
+        }).select('*').single()
+    }
+
     return (
         <div className='h-screen w-full mt-10 flex flex-col md:flex-row justify-center items-center gap-10'>
             <div className='flex flex-col md:flex-row'>
@@ -26,15 +39,15 @@ const page = () => {
             <div className='text-white'>
                 <div className='flex flex-col m-3 gap-1'>
                     <label>Name</label>
-                    <input type="text" placeholder='Name' className='bg-slate-900 pl-2 rounded-lg outline-none p-1 border border-blue-600 border-opacity-40' />
+                    <input value={name} onChange={(e) => setname(e.target.value)} type="text" placeholder='Name' className='bg-slate-900 pl-2 rounded-lg outline-none p-1 border border-blue-600 border-opacity-40' />
                 </div>
                 <div className='flex flex-col m-3 gap-1'>
                     <label> Message </label>
-                    <textarea cols={40} rows={7}
+                    <textarea value={message} onChange={(e) => setmessage(e.target.value)} cols={40} rows={7}
                         placeholder='Send me a message...'
                         className='bg-slate-900 resize-none rounded-lg pl-2  outline-none p-1 border border-blue-600 border-opacity-40' ></textarea>
                 </div>
-                <button className='flex items-center gap-2 bg-white px-4 py-2 text-black rounded-md ml-3'> <div>Send Message </div><Send size={18} /> </button>
+                <button onClick={() => sendMessage()} className='flex items-center gap-2 bg-white px-4 py-2 text-black rounded-md ml-3'> <div>Send Message </div><Send size={18} /> </button>
             </div>
         </div>
     )

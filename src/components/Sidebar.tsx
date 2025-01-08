@@ -7,7 +7,7 @@ import React, { Fragment } from 'react'
 const Sidebar = () => {
     const path = usePathname()
     return (
-        <div className='max-h-[500px] overflow-y-scroll overflow-x-hidden min-w-[240px] hidden lg:flex border-r border-stone-800'>
+        <div className='max-h-[1200px] overflow-y-scroll overflow-x-hidden min-w-[240px] hidden lg:flex border-r border-stone-800'>
             <div className=' text-white  flex-col  justify-start min-w-[240px]   p-4 hidden lg:flex'>
                 <div className='py-4 font-semibold text-sm cursor-pointer'> Follow for updates </div>
                 <Link href={'https://x.com/piyushsainii'} target='_blank' >

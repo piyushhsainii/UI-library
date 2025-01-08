@@ -10,7 +10,7 @@ const CodeStructure = () => {
     const installation = useRef<HTMLDivElement | null>(null)
     const usage = useRef<HTMLDivElement | null>(null)
     const [activeComponent, setactiveComponent] = useState('Installation')
-    const componentName = path.split('/docs/components/')
+    const componentName = path?.split('/docs/components/')
     const getMetadata = async () => {
         const metadata = await import(`../components/UIMetadata/${componentName[1]}`)
         setmetaData(metadata?.metadata)

@@ -3,13 +3,14 @@ import React, { useState } from 'react'
 import Components from './Components'
 import FreeToUse from './FreeToUse'
 import { componentsData } from './data/componentsData'
+import Graphics from './2dGraphics'
 
-type activeTab = "Components" | "Portfolio" | "Product Page" | "Dashboard" | "E-Commerce" | "Free To Use"
+type activeTab = "Components" | "Portfolio" | "2D Graphics" | "Dashboard" | "E-Commerce" | "Free To Use"
 
 const page = () => {
 
-    const templatesTypes = ['Components', 'Portfolio', 'Product Page', 'Dashboard', 'E-Commerce', "Free To Use"]
-    const templatesLength = [componentsData.length, '0', '0', '0', '0', componentsData.filter((data) => data.isPaid == false).length]
+    const templatesTypes = ['Components', 'Portfolio', '2D Graphics', 'Dashboard', 'E-Commerce', "Free To Use"]
+    const templatesLength = [componentsData.length, '0', componentsData.filter((data) => data.componentType == "2dGraphics").length, '0', '0', componentsData.filter((data) => data.isPaid == false).length]
     const [activeTab, setActiveTab] = useState<activeTab>('Components')
 
     return (
@@ -34,10 +35,11 @@ const page = () => {
             <div >
                 {activeTab == "Components" ? <Components /> :
                     activeTab == "Free To Use" ? <FreeToUse /> :
-                        <div className='h-[50vh] flex items-center justify-center mx-auto text-2xl font-semibold text-white text-center'>
-                            Templates of this Category <br></br>
-                            Coming Soon!
-                        </div>
+                        activeTab == "2D Graphics" ? <Graphics /> :
+                            <div className='h-[50vh] flex items-center justify-center mx-auto text-2xl font-semibold text-white text-center'>
+                                Templates of this Category <br></br>
+                                Coming Soon!
+                            </div>
 
                 }
 
