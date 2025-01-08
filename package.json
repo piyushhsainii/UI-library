@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "@dimforge/rapier3d": "^0.14.0",
     "@rive-app/react-canvas": "^4.17.5",
     "@splinetool/react-spline": "^4.0.0",

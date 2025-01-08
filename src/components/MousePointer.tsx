@@ -1,3 +1,4 @@
+import '@babel/polyfill';
 import * as THREE from "three"
 import * as RAPIER from "@dimforge/rapier3d"
 

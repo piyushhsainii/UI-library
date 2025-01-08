@@ -1,4 +1,5 @@
 'use client'
+import '@babel/polyfill';
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import * as RAPIER from "@dimforge/rapier3d";
