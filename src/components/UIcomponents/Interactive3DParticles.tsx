@@ -2,7 +2,7 @@
 import '@babel/polyfill';
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
-import * as RAPIER from "@dimforge/rapier3d";
+import * as RAPIER from "@dimforge/rapier3d-compat";
 import { MousePointer } from "../MousePointer";
 import { cn } from "@/lib/utils";
 import { ClassNameValue } from "tailwind-merge";
